@@ -36,7 +36,7 @@ class IPCheckACL(object):
         while True:
             line = sys.stdin.readline()
             line = line.strip()
-            self.logger.info('squid >> %s' % line)
+            self.logger.debug('squid >> %s' % line)
 
             # parse the input line
             try:
@@ -68,7 +68,7 @@ class IPCheckACL(object):
 def main():
     # setup logging config
     logfile = '/tmp/ipcheck.log'
-    loglevel = LOGGING_LEVEL['DEBUG']
+    loglevel = LOGGING_LEVEL['INFO']
     logging.basicConfig(level = loglevel, filename = logfile, format = LOGGING_FORMAT)
 
     ipCheckACL = IPCheckACL()
